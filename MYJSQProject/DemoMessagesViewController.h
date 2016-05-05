@@ -32,9 +32,6 @@
 
 @end
 
-
-
-
 @interface DemoMessagesViewController : JSQMessagesViewController <UIActionSheetDelegate, JSQMessagesComposerTextViewPasteDelegate>
 
 @property (weak, nonatomic) id<JSQDemoViewControllerDelegate> delegateModal;
@@ -45,4 +42,6 @@
 
 - (void)closePressed:(UIBarButtonItem *)sender;
 
+@property (assign, nonatomic) BOOL shouldDisplayIncomingAvatar;
+@property (assign, nonatomic) BOOL shouldDisplayOutcomingAvatar;
 @end

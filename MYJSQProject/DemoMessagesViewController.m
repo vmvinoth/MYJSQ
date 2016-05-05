@@ -17,6 +17,9 @@
 //
 
 #import "DemoMessagesViewController.h"
+#import "MYQMessagesCollectionViewCellIncomingText.h"
+#import "MYQMessagesCollectionViewCellOutgoingText.h"
+
 
 @implementation DemoMessagesViewController
 
@@ -36,38 +39,34 @@
     [super viewDidLoad];
     
     self.title = @"JSQMessages";
-    
-    /**
-     *  You MUST set your senderId and display name
-     */
     self.senderId = kJSQDemoAvatarIdSquires;
     self.senderDisplayName = kJSQDemoAvatarDisplayNameSquires;
     
-    self.inputToolbar.contentView.textView.pasteDelegate = self;
-    
-    /**
-     *  Load up our fake data for the demo
-     */
-    self.demoData = [[DemoModelData alloc] init];
-    
-    
-    /**
-     *  You can set custom avatar sizes
-     */
-    if (![NSUserDefaults incomingAvatarSetting]) {
+    self.showLoadEarlierMessagesHeader = YES;
+    self.shouldDisplayIncomingAvatar = YES;
+    self.shouldDisplayOutcomingAvatar = YES;
+    if (!self.shouldDisplayIncomingAvatar)
+    {
         self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
     }
-    
-    if (![NSUserDefaults outgoingAvatarSetting]) {
+    if (!self.shouldDisplayOutcomingAvatar)
+    {
         self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
     }
     
-    self.showLoadEarlierMessagesHeader = YES;
+    self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont fontWithName:@"Helvetica" size:20];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage jsq_defaultTypingIndicatorImage]
-                                                                              style:UIBarButtonItemStyleBordered
-                                                                             target:self
-                                                                             action:@selector(receiveMessagePressed:)];
+    
+    //Gap in the left or right
+    //self.collectionView.collectionViewLayout.messageBubbleLeftRightMargin = 150;
+    
+    self.collectionView.collectionViewLayout.messageBubbleTextViewFrameInsets = UIEdgeInsetsMake(0, 0, 20, 0);
+//    self.collectionView.collectionViewLayout.messageBubbleTextViewTextContainerInsets = UIEdgeInsetsMake(20, 20, 30, 20);
+    
+    self.inputToolbar.contentView.textView.pasteDelegate = self;
+    self.demoData = [[DemoModelData alloc] init];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage jsq_defaultTypingIndicatorImage] style:UIBarButtonItemStylePlain target:self action:@selector(receiveMessagePressed:)];
 
     /**
      *  Register custom menu actions for cells.
@@ -93,6 +92,19 @@
      *
      *  self.inputToolbar.maximumHeight = 150;
      */
+    
+    self.incomingCellIdentifier = [MYQMessagesCollectionViewCellIncomingText cellReuseIdentifier];
+    self.incomingMediaCellIdentifier = [MYQMessagesCollectionViewCellIncomingText mediaCellReuseIdentifier];
+
+    [self.collectionView registerNib:[MYQMessagesCollectionViewCellIncomingText nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellIncomingText cellReuseIdentifier]];
+    [self.collectionView registerNib:[MYQMessagesCollectionViewCellIncomingText nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellIncomingText mediaCellReuseIdentifier]];
+
+    self.outgoingCellIdentifier = [MYQMessagesCollectionViewCellOutgoingText cellReuseIdentifier];
+    self.outgoingCellIdentifier = [MYQMessagesCollectionViewCellOutgoingText mediaCellReuseIdentifier];
+    
+    [self.collectionView registerNib:[MYQMessagesCollectionViewCellOutgoingText nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellOutgoingText cellReuseIdentifier]];
+    [self.collectionView registerNib:[MYQMessagesCollectionViewCellOutgoingText nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellOutgoingText mediaCellReuseIdentifier]];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -443,12 +455,12 @@
     JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
     
     if ([message.senderId isEqualToString:self.senderId]) {
-        if (![NSUserDefaults outgoingAvatarSetting]) {
+        if (!self.shouldDisplayOutcomingAvatar) {
             return nil;
         }
     }
     else {
-        if (![NSUserDefaults incomingAvatarSetting]) {
+        if (!self.shouldDisplayIncomingAvatar) {
             return nil;
         }
     }
