@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		18A5DF071CDB3B5200B3CEA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5DF061CDB3B5200B3CEA4 /* main.m */; };
 		18A5DF0A1CDB3B5200B3CEA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5DF091CDB3B5200B3CEA4 /* AppDelegate.m */; };
-		18A5DF0D1CDB3B5200B3CEA4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5DF0C1CDB3B5200B3CEA4 /* ViewController.m */; };
 		18A5DF101CDB3B5200B3CEA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A5DF0E1CDB3B5200B3CEA4 /* Main.storyboard */; };
-		18A5DF121CDB3B5200B3CEA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A5DF111CDB3B5200B3CEA4 /* Assets.xcassets */; };
+		18A5DF121CDB3B5200B3CEA4 /* MYJSQAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A5DF111CDB3B5200B3CEA4 /* MYJSQAssets.xcassets */; };
 		18A5DF151CDB3B5200B3CEA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A5DF131CDB3B5200B3CEA4 /* LaunchScreen.storyboard */; };
+		18A5DF211CDB3EB400B3CEA4 /* DemoMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5DF1E1CDB3EB400B3CEA4 /* DemoMessagesViewController.m */; };
+		18A5DF221CDB3EB400B3CEA4 /* DemoModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5DF201CDB3EB400B3CEA4 /* DemoModelData.m */; };
+		18A5DF251CDB3F7F00B3CEA4 /* NSUserDefaults+DemoSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5DF241CDB3F7F00B3CEA4 /* NSUserDefaults+DemoSettings.m */; };
+		18A5DF2C1CDB436100B3CEA4 /* message_received.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 18A5DF2A1CDB436100B3CEA4 /* message_received.aiff */; };
+		18A5DF2D1CDB436100B3CEA4 /* message_sent.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 18A5DF2B1CDB436100B3CEA4 /* message_sent.aiff */; };
+		18A5DF2F1CDB43A600B3CEA4 /* jsq_messages_sample.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 18A5DF2E1CDB43A600B3CEA4 /* jsq_messages_sample.m4a */; };
 		35963B9154433103B57D4363 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AD04B5D5070F354C1DD968 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +26,19 @@
 		18A5DF061CDB3B5200B3CEA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18A5DF081CDB3B5200B3CEA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18A5DF091CDB3B5200B3CEA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		18A5DF0B1CDB3B5200B3CEA4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		18A5DF0C1CDB3B5200B3CEA4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		18A5DF0F1CDB3B5200B3CEA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		18A5DF111CDB3B5200B3CEA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18A5DF111CDB3B5200B3CEA4 /* MYJSQAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MYJSQAssets.xcassets; sourceTree = "<group>"; };
 		18A5DF141CDB3B5200B3CEA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18A5DF161CDB3B5200B3CEA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18A5DF1D1CDB3EB400B3CEA4 /* DemoMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoMessagesViewController.h; sourceTree = "<group>"; };
+		18A5DF1E1CDB3EB400B3CEA4 /* DemoMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoMessagesViewController.m; sourceTree = "<group>"; };
+		18A5DF1F1CDB3EB400B3CEA4 /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
+		18A5DF201CDB3EB400B3CEA4 /* DemoModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoModelData.m; sourceTree = "<group>"; };
+		18A5DF231CDB3F7F00B3CEA4 /* NSUserDefaults+DemoSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+DemoSettings.h"; sourceTree = "<group>"; };
+		18A5DF241CDB3F7F00B3CEA4 /* NSUserDefaults+DemoSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+DemoSettings.m"; sourceTree = "<group>"; };
+		18A5DF2A1CDB436100B3CEA4 /* message_received.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = message_received.aiff; sourceTree = "<group>"; };
+		18A5DF2B1CDB436100B3CEA4 /* message_sent.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = message_sent.aiff; sourceTree = "<group>"; };
+		18A5DF2E1CDB43A600B3CEA4 /* jsq_messages_sample.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = jsq_messages_sample.m4a; sourceTree = "<group>"; };
 		5D48D36D6174B3AABEAE4ACD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		967DB7DA645BD3DC6E552208 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B8AD04B5D5070F354C1DD968 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,12 +77,18 @@
 		18A5DF041CDB3B5200B3CEA4 /* MYJSQProject */ = {
 			isa = PBXGroup;
 			children = (
+				18A5DF291CDB436100B3CEA4 /* Sounds */,
+				18A5DF1C1CDB3E0700B3CEA4 /* MYQMessagesViewController */,
 				18A5DF081CDB3B5200B3CEA4 /* AppDelegate.h */,
 				18A5DF091CDB3B5200B3CEA4 /* AppDelegate.m */,
-				18A5DF0B1CDB3B5200B3CEA4 /* ViewController.h */,
-				18A5DF0C1CDB3B5200B3CEA4 /* ViewController.m */,
+				18A5DF1D1CDB3EB400B3CEA4 /* DemoMessagesViewController.h */,
+				18A5DF1E1CDB3EB400B3CEA4 /* DemoMessagesViewController.m */,
+				18A5DF1F1CDB3EB400B3CEA4 /* DemoModelData.h */,
+				18A5DF201CDB3EB400B3CEA4 /* DemoModelData.m */,
+				18A5DF231CDB3F7F00B3CEA4 /* NSUserDefaults+DemoSettings.h */,
+				18A5DF241CDB3F7F00B3CEA4 /* NSUserDefaults+DemoSettings.m */,
 				18A5DF0E1CDB3B5200B3CEA4 /* Main.storyboard */,
-				18A5DF111CDB3B5200B3CEA4 /* Assets.xcassets */,
+				18A5DF111CDB3B5200B3CEA4 /* MYJSQAssets.xcassets */,
 				18A5DF131CDB3B5200B3CEA4 /* LaunchScreen.storyboard */,
 				18A5DF161CDB3B5200B3CEA4 /* Info.plist */,
 				18A5DF051CDB3B5200B3CEA4 /* Supporting Files */,
@@ -84,6 +102,23 @@
 				18A5DF061CDB3B5200B3CEA4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18A5DF1C1CDB3E0700B3CEA4 /* MYQMessagesViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MYQMessagesViewController;
+			sourceTree = "<group>";
+		};
+		18A5DF291CDB436100B3CEA4 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				18A5DF2E1CDB43A600B3CEA4 /* jsq_messages_sample.m4a */,
+				18A5DF2A1CDB436100B3CEA4 /* message_received.aiff */,
+				18A5DF2B1CDB436100B3CEA4 /* message_sent.aiff */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		1F564940E71D23BEAA6BB6BC /* Pods */ = {
@@ -163,9 +198,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A5DF2C1CDB436100B3CEA4 /* message_received.aiff in Resources */,
 				18A5DF151CDB3B5200B3CEA4 /* LaunchScreen.storyboard in Resources */,
-				18A5DF121CDB3B5200B3CEA4 /* Assets.xcassets in Resources */,
+				18A5DF121CDB3B5200B3CEA4 /* MYJSQAssets.xcassets in Resources */,
 				18A5DF101CDB3B5200B3CEA4 /* Main.storyboard in Resources */,
+				18A5DF2D1CDB436100B3CEA4 /* message_sent.aiff in Resources */,
+				18A5DF2F1CDB43A600B3CEA4 /* jsq_messages_sample.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,9 +262,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18A5DF0D1CDB3B5200B3CEA4 /* ViewController.m in Sources */,
 				18A5DF0A1CDB3B5200B3CEA4 /* AppDelegate.m in Sources */,
 				18A5DF071CDB3B5200B3CEA4 /* main.m in Sources */,
+				18A5DF221CDB3EB400B3CEA4 /* DemoModelData.m in Sources */,
+				18A5DF211CDB3EB400B3CEA4 /* DemoMessagesViewController.m in Sources */,
+				18A5DF251CDB3F7F00B3CEA4 /* NSUserDefaults+DemoSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
