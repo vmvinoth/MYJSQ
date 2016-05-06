@@ -92,4 +92,6 @@
  */
 - (NSString *)relativeDateForDate:(NSDate *)date;
 
+//@vvm
+- (NSString *)relativeMYQFormatterForDate:(NSDate *)date;
 @end

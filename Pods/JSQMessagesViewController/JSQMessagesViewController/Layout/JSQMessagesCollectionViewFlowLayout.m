@@ -66,6 +66,9 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     
     _messageBubbleFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     
+    //@vvm
+    _dateTimeBubbleFont = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         _messageBubbleLeftRightMargin = 240.0f;
     }
@@ -438,7 +441,10 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     layoutAttributes.textViewTextContainerInsets = self.messageBubbleTextViewTextContainerInsets;
     
     layoutAttributes.messageBubbleFont = self.messageBubbleFont;
-    
+
+    //@vvm
+    layoutAttributes.dateTimeBubbleFont = self.dateTimeBubbleFont;
+
     layoutAttributes.incomingAvatarViewSize = self.incomingAvatarViewSize;
     
     layoutAttributes.outgoingAvatarViewSize = self.outgoingAvatarViewSize;
@@ -529,4 +535,15 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     }
 }
 
+//@vvm
+- (void)setDateTimeBubbleFont:(UIFont *)dateTimeBubbleFont
+{
+    if ([_dateTimeBubbleFont isEqual:dateTimeBubbleFont]) {
+        return;
+    }
+    
+    NSParameterAssert(dateTimeBubbleFont != nil);
+    _dateTimeBubbleFont = dateTimeBubbleFont;
+    [self invalidateLayoutWithContext:[JSQMessagesCollectionViewFlowLayoutInvalidationContext context]];
+}
 @end

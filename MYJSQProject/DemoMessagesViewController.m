@@ -55,6 +55,7 @@
     }
     
     self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont fontWithName:@"Helvetica" size:20];
+    self.collectionView.collectionViewLayout.dateTimeBubbleFont = [UIFont fontWithName:@"Helvetica" size:10];
     
     
     //Gap in the left or right
@@ -524,12 +525,13 @@
 {
     if ([msg.senderId isEqualToString:self.senderId]){
         MYQMessagesCollectionViewCellOutgoingText *outgoingCell = (MYQMessagesCollectionViewCellOutgoingText*)cell;
-        outgoingCell.timeInfoLabel.text = [[JSQMessagesTimestampFormatter sharedFormatter] timeForDate:msg.date];
+        outgoingCell.timeInfoLabel.attributedText = [[NSAttributedString alloc] initWithString:[[JSQMessagesTimestampFormatter sharedFormatter] relativeMYQFormatterForDate:msg.date]attributes:@{ NSFontAttributeName : self.collectionView.collectionViewLayout.dateTimeBubbleFont }];
+
         cell.textView.textColor = [UIColor blackColor];
     }
     else {
         MYQMessagesCollectionViewCellIncomingText *inComingCell = (MYQMessagesCollectionViewCellIncomingText*)cell;
-        inComingCell.timeInfoLabel.text = [[JSQMessagesTimestampFormatter sharedFormatter] timeForDate:msg.date];
+        inComingCell.timeInfoLabel.attributedText = [[NSAttributedString alloc] initWithString:[[JSQMessagesTimestampFormatter sharedFormatter] relativeMYQFormatterForDate:msg.date]attributes:@{ NSFontAttributeName : self.collectionView.collectionViewLayout.dateTimeBubbleFont }];
         cell.textView.textColor = [UIColor whiteColor];
     }
     

@@ -121,4 +121,16 @@
     return [self.dateFormatter stringFromDate:date];
 }
 
+//@vvm start
+- (NSString *)relativeMYQFormatterForDate:(NSDate *)date
+{
+    if (!date) {
+        return nil;
+    }
+    
+    [self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [self.dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    return [self.dateFormatter stringFromDate:date];
+}
+//@vvm end
 @end

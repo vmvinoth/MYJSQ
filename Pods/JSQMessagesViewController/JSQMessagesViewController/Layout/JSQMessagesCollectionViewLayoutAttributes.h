@@ -103,4 +103,6 @@
  */
 @property (assign, nonatomic) CGFloat cellBottomLabelHeight;
 
+//@vvm
+@property (strong, nonatomic) UIFont *dateTimeBubbleFont;
 @end

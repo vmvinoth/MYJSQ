@@ -24,6 +24,7 @@
 		18A5DF3B1CDB704C00B3CEA4 /* MYQMessagesCollectionViewCellOutgoingText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A5DF3A1CDB704C00B3CEA4 /* MYQMessagesCollectionViewCellOutgoingText.xib */; };
 		18A5DF3E1CDB7CC500B3CEA4 /* MYQMessagesCollectionViewCellOutgoingHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5DF3D1CDB7CC500B3CEA4 /* MYQMessagesCollectionViewCellOutgoingHomework.m */; };
 		18A5DF401CDB7CD300B3CEA4 /* MYQMessagesCollectionViewCellOutgoingHomework.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A5DF3F1CDB7CD300B3CEA4 /* MYQMessagesCollectionViewCellOutgoingHomework.xib */; };
+		18BE978B1CDCF14F005B5D7B /* MYQUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BE978A1CDCF14F005B5D7B /* MYQUtilities.m */; };
 		35963B9154433103B57D4363 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AD04B5D5070F354C1DD968 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		18A5DF3C1CDB7CC500B3CEA4 /* MYQMessagesCollectionViewCellOutgoingHomework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYQMessagesCollectionViewCellOutgoingHomework.h; sourceTree = "<group>"; };
 		18A5DF3D1CDB7CC500B3CEA4 /* MYQMessagesCollectionViewCellOutgoingHomework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYQMessagesCollectionViewCellOutgoingHomework.m; sourceTree = "<group>"; };
 		18A5DF3F1CDB7CD300B3CEA4 /* MYQMessagesCollectionViewCellOutgoingHomework.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MYQMessagesCollectionViewCellOutgoingHomework.xib; sourceTree = "<group>"; };
+		18BE97891CDCF14F005B5D7B /* MYQUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYQUtilities.h; sourceTree = "<group>"; };
+		18BE978A1CDCF14F005B5D7B /* MYQUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYQUtilities.m; sourceTree = "<group>"; };
 		5D48D36D6174B3AABEAE4ACD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		967DB7DA645BD3DC6E552208 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B8AD04B5D5070F354C1DD968 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +134,8 @@
 				18A5DF3C1CDB7CC500B3CEA4 /* MYQMessagesCollectionViewCellOutgoingHomework.h */,
 				18A5DF3D1CDB7CC500B3CEA4 /* MYQMessagesCollectionViewCellOutgoingHomework.m */,
 				18A5DF3F1CDB7CD300B3CEA4 /* MYQMessagesCollectionViewCellOutgoingHomework.xib */,
+				18BE97891CDCF14F005B5D7B /* MYQUtilities.h */,
+				18BE978A1CDCF14F005B5D7B /* MYQUtilities.m */,
 			);
 			path = MYQMessagesViewController;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BE978B1CDCF14F005B5D7B /* MYQUtilities.m in Sources */,
 				18A5DF3E1CDB7CC500B3CEA4 /* MYQMessagesCollectionViewCellOutgoingHomework.m in Sources */,
 				18A5DF321CDB613200B3CEA4 /* MYQMessagesCollectionViewCellIncomingText.m in Sources */,
 				18A5DF0A1CDB3B5200B3CEA4 /* AppDelegate.m in Sources */,

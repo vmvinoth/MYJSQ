@@ -25,6 +25,8 @@
 
 #import "UIImage+JSQMessages.h"
 
+//@vvm
+#import "JSQMessagesTimestampFormatter.h"
 
 @interface JSQMessagesBubblesSizeCalculator ()
 
@@ -122,7 +124,18 @@
                                                              context:nil];
 
         CGSize stringSize = CGRectIntegral(stringRect).size;
-
+        //@vvm start
+        CGRect stringDateRect = [[[JSQMessagesTimestampFormatter sharedFormatter] relativeMYQFormatterForDate:messageData.date] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+                                                             options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                          attributes:@{ NSFontAttributeName : layout.dateTimeBubbleFont }
+                                                             context:nil];
+        
+        CGSize stringDateSize = CGRectIntegral(stringDateRect).size;
+        
+        CGFloat relativeStringWidth = MAX(stringSize.width, stringDateSize.width);
+        
+        //@vvm end
+        
         CGFloat verticalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.top + layout.messageBubbleTextViewTextContainerInsets.bottom;
         CGFloat verticalFrameInsets = layout.messageBubbleTextViewFrameInsets.top + layout.messageBubbleTextViewFrameInsets.bottom;
 
@@ -130,8 +143,12 @@
         //  not sure why. magix. (shrug) if you know, submit a PR
         CGFloat verticalInsets = verticalContainerInsets + verticalFrameInsets + self.additionalInset;
 
+        //@vvm commented below line
         //  same as above, an extra 2 points of magix
-        CGFloat finalWidth = MAX(stringSize.width + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
+        //CGFloat finalWidth = MAX(stringSize.width + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
+        
+        //@vvm
+        CGFloat finalWidth = MAX(relativeStringWidth + horizontalInsetsTotal, self.minimumBubbleWidth) + self.additionalInset;
 
         finalSize = CGSizeMake(finalWidth, stringSize.height + verticalInsets);
     }

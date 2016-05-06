@@ -210,4 +210,6 @@ FOUNDATION_EXPORT const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault;
  */
 - (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 
+//@vvm
+@property (strong, nonatomic) UIFont *dateTimeBubbleFont;
 @end
