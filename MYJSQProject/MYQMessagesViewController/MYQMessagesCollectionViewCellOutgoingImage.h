@@ -1,14 +1,15 @@
 //
-//  MYQMessagesCollectionViewCellOutgoing.h
+//  MYQMessagesCollectionViewCellOutgoingImage.h
 //  MYJSQProject
 //
-//  Created by Vinoth on 5/5/16.
+//  Created by Vinoth on 5/6/16.
 //  Copyright © 2016 Myantra. All rights reserved.
 //
 
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 
-@interface MYQMessagesCollectionViewCellOutgoingText : JSQMessagesCollectionViewCellOutgoing
+@interface MYQMessagesCollectionViewCellOutgoingImage : JSQMessagesCollectionViewCellOutgoing
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *timeInfoLabel;
 @property (weak, nonatomic) IBOutlet UIView *timeTickView;
+@property (weak, nonatomic) IBOutlet UIImageView *msgImgView;
 @end

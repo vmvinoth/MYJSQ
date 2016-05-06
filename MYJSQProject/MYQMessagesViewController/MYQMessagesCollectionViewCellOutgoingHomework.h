@@ -6,7 +6,7 @@
 //  Copyright © 2016 Myantra. All rights reserved.
 //
 
-#import <JSQMessagesViewController/JSQMessagesViewController.h>
+#import "JSQMessagesViewController.h"
 
 @interface MYQMessagesCollectionViewCellOutgoingHomework : JSQMessagesCollectionViewCell
 

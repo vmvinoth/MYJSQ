@@ -17,8 +17,9 @@
 //
 
 #import "DemoModelData.h"
-
 #import "NSUserDefaults+DemoSettings.h"
+
+#import "MYQPhotoMediaItem.h"
 
 
 /**
@@ -38,7 +39,8 @@
             self.messages = [NSMutableArray new];
         }
         else {
-            [self loadFakeMessages];
+            self.messages = [NSMutableArray new];
+            //[self loadFakeMessages];
         }
         
         
@@ -170,10 +172,10 @@
 
 - (void)addPhotoMediaMessage
 {
-    JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage imageNamed:@"goldengate"]];
-    JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires
-                                                   displayName:kJSQDemoAvatarDisplayNameSquires
-                                                         media:photoItem];
+    //JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage imageNamed:@"goldengate"]];
+    //JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires displayName:kJSQDemoAvatarDisplayNameSquires media:photoItem];
+    MYQPhotoMediaItem *photoItem = [[MYQPhotoMediaItem alloc]initWithImageName:@"goldengate"];
+    JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires displayName:kJSQDemoAvatarDisplayNameSquires mediaItem:photoItem captionText:@"Ennada idhu"];
     [self.messages addObject:photoMessage];
 }
 

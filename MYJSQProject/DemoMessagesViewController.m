@@ -19,7 +19,9 @@
 #import "DemoMessagesViewController.h"
 #import "MYQMessagesCollectionViewCellIncomingText.h"
 #import "MYQMessagesCollectionViewCellOutgoingText.h"
-
+#import "MYQMessagesCollectionViewCellIncomingImage.h"
+#import "MYQMessagesCollectionViewCellOutgoingImage.h"
+#import "MYQPhotoMediaItem.h"
 
 @implementation DemoMessagesViewController
 
@@ -55,7 +57,7 @@
     }
     
     self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont fontWithName:@"Helvetica" size:20];
-    self.collectionView.collectionViewLayout.dateTimeBubbleFont = [UIFont fontWithName:@"Helvetica" size:10];
+    self.collectionView.collectionViewLayout.dateTimeBubbleFont = [UIFont fontWithName:@"Helvetica" size:12];
     
     
     //Gap in the left or right
@@ -95,15 +97,19 @@
     
     self.incomingCellIdentifier = [MYQMessagesCollectionViewCellIncomingText cellReuseIdentifier];
     self.incomingMediaCellIdentifier = [MYQMessagesCollectionViewCellIncomingText mediaCellReuseIdentifier];
+    self.inComingCellIdentifierPhoto = [MYQMessagesCollectionViewCellIncomingImage cellReuseIdentifier];
 
     [self.collectionView registerNib:[MYQMessagesCollectionViewCellIncomingText nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellIncomingText cellReuseIdentifier]];
     [self.collectionView registerNib:[MYQMessagesCollectionViewCellIncomingText nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellIncomingText mediaCellReuseIdentifier]];
+    [self.collectionView registerNib:[MYQMessagesCollectionViewCellIncomingImage nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellIncomingImage cellReuseIdentifier]];
 
     self.outgoingCellIdentifier = [MYQMessagesCollectionViewCellOutgoingText cellReuseIdentifier];
     self.outgoingMediaCellIdentifier = [MYQMessagesCollectionViewCellOutgoingText mediaCellReuseIdentifier];
+    self.outgoingCellIdentifierPhoto = [MYQMessagesCollectionViewCellOutgoingImage cellReuseIdentifier];
     
     [self.collectionView registerNib:[MYQMessagesCollectionViewCellOutgoingText nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellOutgoingText cellReuseIdentifier]];
     [self.collectionView registerNib:[MYQMessagesCollectionViewCellOutgoingText nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellOutgoingText mediaCellReuseIdentifier]];
+    [self.collectionView registerNib:[MYQMessagesCollectionViewCellOutgoingImage nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellOutgoingImage cellReuseIdentifier]];
 
 }
 
@@ -538,6 +544,25 @@
     cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid)};
 }
 
+
+- (void)handlePhotoMessageUIforCell:(JSQMessagesCollectionViewCell *)cell withMessage:(JSQMessage*)msg
+{
+    if ([msg.senderId isEqualToString:self.senderId]){
+        MYQMessagesCollectionViewCellOutgoingImage *outgoingCell = (MYQMessagesCollectionViewCellOutgoingImage*)cell;
+        outgoingCell.timeInfoLabel.attributedText = [[NSAttributedString alloc] initWithString:[[JSQMessagesTimestampFormatter sharedFormatter] relativeMYQFormatterForDate:msg.date]attributes:@{ NSFontAttributeName : self.collectionView.collectionViewLayout.dateTimeBubbleFont }];
+        outgoingCell.msgImgView.image = [UIImage imageNamed:[(MYQPhotoMediaItem*)msg.media imageName]];
+        cell.textView.textColor = [UIColor blackColor];
+    }
+    else {
+        MYQMessagesCollectionViewCellIncomingImage *inComingCell = (MYQMessagesCollectionViewCellIncomingImage*)cell;
+        inComingCell.timeInfoLabel.attributedText = [[NSAttributedString alloc] initWithString:[[JSQMessagesTimestampFormatter sharedFormatter] relativeMYQFormatterForDate:msg.date]attributes:@{ NSFontAttributeName : self.collectionView.collectionViewLayout.dateTimeBubbleFont }];
+        inComingCell.msgImgView.image = [UIImage imageNamed:msg.imageName];
+        cell.textView.textColor = [UIColor whiteColor];
+    }
+    
+    cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid)};
+}
+
 - (UICollectionViewCell *)collectionView:(JSQMessagesCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     /**
@@ -568,7 +593,11 @@
                 [self handleTextMessageUIforCell:cell withMessage:msg];
             }
                 break;
-                
+            case MYQMessageTypePhoto:
+            {
+                [self handlePhotoMessageUIforCell:cell withMessage:msg];
+            }
+                break;
             default:
                 break;
         }
