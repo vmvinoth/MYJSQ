@@ -7,8 +7,17 @@
 //
 
 #import "MYQMessagesCollectionViewCellOutgoingText.h"
+@interface MYQMessagesCollectionViewCellOutgoingText()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *timeTickViewVerticalSpaceConstraint;
+@end
 
 @implementation MYQMessagesCollectionViewCellOutgoingText
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.timeInfoLabel.textColor = [UIColor darkGrayColor];
+}
+
 - (void)setBackgroundColor:(UIColor *)backgroundColor
 {
     [super setBackgroundColor:backgroundColor];

@@ -20,6 +20,14 @@
 
 #import "JSQMessageData.h"
 
+typedef NS_ENUM(NSInteger, MYQMessageType) {
+    MYQMessageTypeText,
+    MYQMessageTypePhoto,
+    MYQMessageTypeVideo,
+    MYQMessageTypeHoliday,
+    MYQMessageTypeHomework
+};
+
 /**
  *  The `JSQMessage` class is a concrete class for message model objects that represents a single user message.
  *  The message can be a text message or media message, depending on how it is initialized.
@@ -135,5 +143,8 @@
  *  Not a valid initializer.
  */
 - (id)init NS_UNAVAILABLE;
+
+//@vvm
+@property (assign, nonatomic, readonly) MYQMessageType messageType;
 
 @end

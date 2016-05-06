@@ -61,7 +61,7 @@
     //self.collectionView.collectionViewLayout.messageBubbleLeftRightMargin = 150;
     
     self.collectionView.collectionViewLayout.messageBubbleTextViewFrameInsets = UIEdgeInsetsMake(0, 0, 20, 0);
-//    self.collectionView.collectionViewLayout.messageBubbleTextViewTextContainerInsets = UIEdgeInsetsMake(20, 20, 30, 20);
+    //self.collectionView.collectionViewLayout.messageBubbleTextViewTextContainerInsets = UIEdgeInsetsMake(20, 20, 30, 20);
     
     self.inputToolbar.contentView.textView.pasteDelegate = self;
     self.demoData = [[DemoModelData alloc] init];
@@ -72,8 +72,7 @@
      *  Register custom menu actions for cells.
      */
     [JSQMessagesCollectionViewCell registerMenuAction:@selector(customAction:)];
-    [UIMenuController sharedMenuController].menuItems = @[ [[UIMenuItem alloc] initWithTitle:@"Custom Action"
-                                                                                      action:@selector(customAction:)] ];
+    [UIMenuController sharedMenuController].menuItems = @[ [[UIMenuItem alloc] initWithTitle:@"Custom Action" action:@selector(customAction:)]];
 
     /**
      *  OPT-IN: allow cells to be deleted
@@ -100,7 +99,7 @@
     [self.collectionView registerNib:[MYQMessagesCollectionViewCellIncomingText nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellIncomingText mediaCellReuseIdentifier]];
 
     self.outgoingCellIdentifier = [MYQMessagesCollectionViewCellOutgoingText cellReuseIdentifier];
-    self.outgoingCellIdentifier = [MYQMessagesCollectionViewCellOutgoingText mediaCellReuseIdentifier];
+    self.outgoingMediaCellIdentifier = [MYQMessagesCollectionViewCellOutgoingText mediaCellReuseIdentifier];
     
     [self.collectionView registerNib:[MYQMessagesCollectionViewCellOutgoingText nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellOutgoingText cellReuseIdentifier]];
     [self.collectionView registerNib:[MYQMessagesCollectionViewCellOutgoingText nib]forCellWithReuseIdentifier:[MYQMessagesCollectionViewCellOutgoingText mediaCellReuseIdentifier]];
@@ -521,6 +520,22 @@
     return [self.demoData.messages count];
 }
 
+- (void)handleTextMessageUIforCell:(JSQMessagesCollectionViewCell *)cell withMessage:(JSQMessage*)msg
+{
+    if ([msg.senderId isEqualToString:self.senderId]){
+        MYQMessagesCollectionViewCellOutgoingText *outgoingCell = (MYQMessagesCollectionViewCellOutgoingText*)cell;
+        outgoingCell.timeInfoLabel.text = [[JSQMessagesTimestampFormatter sharedFormatter] timeForDate:msg.date];
+        cell.textView.textColor = [UIColor blackColor];
+    }
+    else {
+        MYQMessagesCollectionViewCellIncomingText *inComingCell = (MYQMessagesCollectionViewCellIncomingText*)cell;
+        inComingCell.timeInfoLabel.text = [[JSQMessagesTimestampFormatter sharedFormatter] timeForDate:msg.date];
+        cell.textView.textColor = [UIColor whiteColor];
+    }
+    
+    cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid)};
+}
+
 - (UICollectionViewCell *)collectionView:(JSQMessagesCollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     /**
@@ -545,16 +560,17 @@
     JSQMessage *msg = [self.demoData.messages objectAtIndex:indexPath.item];
     
     if (!msg.isMediaMessage) {
-        
-        if ([msg.senderId isEqualToString:self.senderId]) {
-            cell.textView.textColor = [UIColor blackColor];
+        switch (msg.messageType) {
+            case MYQMessageTypeText:
+            {
+                [self handleTextMessageUIforCell:cell withMessage:msg];
+            }
+                break;
+                
+            default:
+                break;
         }
-        else {
-            cell.textView.textColor = [UIColor whiteColor];
-        }
         
-        cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,
-                                              NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
     }
     
     return cell;

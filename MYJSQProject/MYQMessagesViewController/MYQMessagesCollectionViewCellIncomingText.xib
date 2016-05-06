@@ -21,7 +21,7 @@
                             <constraint firstAttribute="height" constant="20" id="Twe-qT-ARh"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bubble top label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvi-Bh-e6g" userLabel="Bubble top label" customClass="JSQMessagesLabel">
@@ -31,7 +31,7 @@
                             <constraint firstAttribute="height" constant="20" id="0Yy-hs-2L7"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ge2-ld-rty" userLabel="Bubble container">
@@ -42,7 +42,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTo-kb-6lj" customClass="JSQMessagesCellTextView">
                                 <rect key="frame" x="6" y="0.0" width="238" height="94"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -55,7 +55,7 @@
                                             <constraint firstAttribute="height" constant="20" id="CpA-AS-yLF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -107,7 +107,7 @@
                             <constraint firstAttribute="height" constant="20" id="xRl-o2-OvR"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -151,6 +151,7 @@
                 <outlet property="textViewTopVerticalSpaceConstraint" destination="n7v-37-fhi" id="FeK-Nq-WS6"/>
                 <outlet property="timeInfoLabel" destination="8Ll-sd-M95" id="rC4-U9-SMt"/>
                 <outlet property="timeTickView" destination="b4L-gQ-xWj" id="57j-Zr-0Hn"/>
+                <outlet property="timeTickViewVerticalSpaceConstraint" destination="IMR-Oc-AYJ" id="oc2-2Y-UUK"/>
             </connections>
             <point key="canvasLocation" x="255" y="423"/>
         </collectionViewCell>

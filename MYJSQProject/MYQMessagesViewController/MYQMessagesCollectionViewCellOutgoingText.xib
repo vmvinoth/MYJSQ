@@ -148,6 +148,7 @@
                 <outlet property="textViewTopVerticalSpaceConstraint" destination="3HV-FM-NWg" id="ma5-KK-stt"/>
                 <outlet property="timeInfoLabel" destination="zGh-UC-IpX" id="wfb-cL-nHi"/>
                 <outlet property="timeTickView" destination="hXo-jX-DnD" id="6j6-PC-7Yo"/>
+                <outlet property="timeTickViewVerticalSpaceConstraint" destination="dWg-Id-IeH" id="thm-BS-GzO"/>
             </connections>
             <point key="canvasLocation" x="371" y="145"/>
         </collectionViewCell>
