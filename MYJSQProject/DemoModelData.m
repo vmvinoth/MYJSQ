@@ -174,7 +174,7 @@
 {
     //JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage imageNamed:@"goldengate"]];
     //JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires displayName:kJSQDemoAvatarDisplayNameSquires media:photoItem];
-    MYQPhotoMediaItem *photoItem = [[MYQPhotoMediaItem alloc]initWithImageName:@"goldengate" withCaption:@"Ennada idhu"];
+    MYQPhotoMediaItem *photoItem = [[MYQPhotoMediaItem alloc]initWithImageName:@"goldengate" withCaption:@"When Loren Brichter introduced the idea of pull to refresh in Tweetie 2 a few years ago"];
     JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires displayName:kJSQDemoAvatarDisplayNameSquires mediaItem:photoItem];
     [self.messages addObject:photoMessage];
 }

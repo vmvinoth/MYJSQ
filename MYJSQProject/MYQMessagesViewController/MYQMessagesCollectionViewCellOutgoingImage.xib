@@ -58,10 +58,10 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DxQ-3h-prK">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="140"/>
+                                <rect key="frame" x="10" y="10" width="218" height="130"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="238" id="gfY-Tj-oO2"/>
-                                    <constraint firstAttribute="height" constant="140" id="oYi-Ja-FSR"/>
+                                    <constraint firstAttribute="width" constant="218" id="gfY-Tj-oO2"/>
+                                    <constraint firstAttribute="height" constant="130" id="oYi-Ja-FSR"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssm-nb-gvH" customClass="JSQMessagesCellTextView">
@@ -73,10 +73,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="DxQ-3h-prK" secondAttribute="trailing" constant="6" id="21N-q8-UIT"/>
-                            <constraint firstItem="DxQ-3h-prK" firstAttribute="top" secondItem="eGV-TC-upA" secondAttribute="top" id="33M-nF-qe0"/>
+                            <constraint firstAttribute="trailing" secondItem="DxQ-3h-prK" secondAttribute="trailing" constant="16" id="21N-q8-UIT"/>
+                            <constraint firstItem="DxQ-3h-prK" firstAttribute="top" secondItem="eGV-TC-upA" secondAttribute="top" constant="10" id="33M-nF-qe0"/>
                             <constraint firstAttribute="trailing" secondItem="1i2-e7-zRj" secondAttribute="trailing" id="6a4-3N-k4v"/>
-                            <constraint firstItem="DxQ-3h-prK" firstAttribute="leading" secondItem="eGV-TC-upA" secondAttribute="leading" id="9WK-5u-1yh"/>
+                            <constraint firstItem="DxQ-3h-prK" firstAttribute="leading" secondItem="eGV-TC-upA" secondAttribute="leading" constant="10" id="9WK-5u-1yh"/>
                             <constraint firstAttribute="width" constant="244" id="FFq-3D-Ci7"/>
                             <constraint firstAttribute="trailing" secondItem="ssm-nb-gvH" secondAttribute="trailing" constant="6" id="HFM-hl-tBU"/>
                             <constraint firstItem="ssm-nb-gvH" firstAttribute="leading" secondItem="eGV-TC-upA" secondAttribute="leading" id="Nvo-TX-WiA"/>
@@ -84,7 +84,7 @@
                             <constraint firstItem="1i2-e7-zRj" firstAttribute="leading" secondItem="eGV-TC-upA" secondAttribute="leading" id="ZCf-9k-NhK"/>
                             <constraint firstAttribute="bottom" secondItem="ssm-nb-gvH" secondAttribute="bottom" id="arv-Ro-dZe"/>
                             <constraint firstAttribute="trailing" secondItem="00a-wI-KdH" secondAttribute="trailing" constant="6" id="e7O-GD-K0o"/>
-                            <constraint firstItem="DxQ-3h-prK" firstAttribute="top" secondItem="eGV-TC-upA" secondAttribute="top" id="frg-NO-bAC"/>
+                            <constraint firstItem="DxQ-3h-prK" firstAttribute="top" secondItem="eGV-TC-upA" secondAttribute="top" constant="10" id="frg-NO-bAC"/>
                             <constraint firstItem="ssm-nb-gvH" firstAttribute="top" secondItem="DxQ-3h-prK" secondAttribute="bottom" id="lSy-W5-GDZ"/>
                             <constraint firstItem="00a-wI-KdH" firstAttribute="leading" secondItem="eGV-TC-upA" secondAttribute="leading" id="uRl-mj-QIu"/>
                             <constraint firstItem="1i2-e7-zRj" firstAttribute="top" secondItem="eGV-TC-upA" secondAttribute="top" id="w6N-gq-Trr"/>

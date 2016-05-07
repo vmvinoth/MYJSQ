@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define DEVICE_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define DEVICE_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
 @interface MYQUtilities : NSObject
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MYQPhotoMediaItem.h"
+#import "MYQUtilities.h"
 
 @implementation MYQPhotoMediaItem
 - (CGSize)mediaViewDisplaySize
@@ -15,7 +16,7 @@
         return CGSizeMake(315.0f, 225.0f);
     }
     
-    return CGSizeMake(210.0f, 150.0f);
+    return CGSizeMake(DEVICE_SCREEN_WIDTH*.70, 180.0f);
 }
 - (instancetype)initWithImageName:(NSString *)imageName withCaption:(NSString *)imageCaptionText
 {

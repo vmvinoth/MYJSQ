@@ -14,6 +14,8 @@
     [super awakeFromNib];
     self.timeInfoLabel.textColor = [UIColor darkGrayColor];
     //self.msgImgView.image = [UIImage imageNamed:@"goldengate"];
+    self.msgImgView.layer.cornerRadius = 5.0f;
+    self.msgImgView.clipsToBounds = YES;
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor

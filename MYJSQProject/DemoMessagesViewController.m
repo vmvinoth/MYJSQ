@@ -553,7 +553,8 @@
         MYQMessagesCollectionViewCellOutgoingImage *outgoingCell = (MYQMessagesCollectionViewCellOutgoingImage*)cell;
         outgoingCell.timeInfoLabel.attributedText = [[NSAttributedString alloc] initWithString:[[JSQMessagesTimestampFormatter sharedFormatter] relativeMYQFormatterForDate:msg.date]attributes:@{ NSFontAttributeName : self.collectionView.collectionViewLayout.dateTimeBubbleFont }];
         outgoingCell.msgImgView.image = [UIImage imageNamed:msgMedia.imageName];
-        outgoingCell.textView.text = msgMedia.photoCaptionText;
+         outgoingCell.textView.text = msgMedia.photoCaptionText;
+        outgoingCell.textView.font = self.collectionView.collectionViewLayout.photoCaptionBubbleFont;
         outgoingCell.textView.textColor = [UIColor blackColor];
     }
     else {
