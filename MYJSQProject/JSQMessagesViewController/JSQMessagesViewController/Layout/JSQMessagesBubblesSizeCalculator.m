@@ -27,6 +27,7 @@
 
 //@vvm
 #import "JSQMessagesTimestampFormatter.h"
+#import "MYQPhotoMediaItem.h"
 
 @interface JSQMessagesBubblesSizeCalculator ()
 
@@ -117,13 +118,6 @@
 
         CGFloat horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
         CGFloat maximumTextWidth = [self textBubbleWidthForLayout:layout] - avatarSize.width - layout.messageBubbleLeftRightMargin - horizontalInsetsTotal;
-
-        CGRect stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
-                                                             options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
-                                                          attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
-                                                             context:nil];
-
-        CGSize stringSize = CGRectIntegral(stringRect).size;
         
         CGFloat verticalContainerInsets = layout.messageBubbleTextViewTextContainerInsets.top + layout.messageBubbleTextViewTextContainerInsets.bottom;
         CGFloat verticalFrameInsets = layout.messageBubbleTextViewFrameInsets.top + layout.messageBubbleTextViewFrameInsets.bottom;
@@ -137,6 +131,13 @@
         switch ([messageData messageType]) {
             case MYQMessageTypeText:
             {
+                CGRect stringRect = [[messageData text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+                                                                     options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                                  attributes:@{ NSFontAttributeName : layout.messageBubbleFont }
+                                                                     context:nil];
+                
+                CGSize stringSize = CGRectIntegral(stringRect).size;
+                
                 CGRect stringDateRect = [[[JSQMessagesTimestampFormatter sharedFormatter] relativeMYQFormatterForDate:messageData.date] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
                                                                                                                                                      options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
                                                                                                                                                   attributes:@{ NSFontAttributeName : layout.dateTimeBubbleFont }
@@ -150,9 +151,16 @@
                 break;
             case MYQMessageTypePhoto:
             {
+                CGRect stringRect = [[(MYQPhotoMediaItem*)[messageData media]photoCaptionText] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+                                                                     options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                                  attributes:@{ NSFontAttributeName : layout.photoCaptionBubbleFont }
+                                                                     context:nil];
+                
+                CGSize stringSize = CGRectIntegral(stringRect).size;
+                
                 CGSize photoMediaSize = [[messageData media] mediaViewDisplaySize];
                 CGFloat finalWidth = photoMediaSize.width;
-                finalSize = CGSizeMake(finalWidth, photoMediaSize.height + stringSize.height + verticalInsets);
+                finalSize = CGSizeMake(finalWidth, photoMediaSize.height + stringSize.height);
             }
                 break;
             default:

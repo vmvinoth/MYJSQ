@@ -13,7 +13,7 @@
 {
     [super awakeFromNib];
     self.timeInfoLabel.textColor = [UIColor darkGrayColor];
-    self.msgImgView.image = [UIImage imageNamed:@"goldengate"];
+    //self.msgImgView.image = [UIImage imageNamed:@"goldengate"];
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor

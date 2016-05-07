@@ -40,12 +40,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1i2-e7-zRj" userLabel="Bubble Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="244" height="234"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssm-nb-gvH" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="0.0" y="140" width="238" height="94"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00a-wI-KdH">
                                 <rect key="frame" x="0.0" y="214" width="238" height="20"/>
                                 <subviews>
@@ -63,20 +57,26 @@
                                     <constraint firstAttribute="height" constant="20" id="naf-B0-9pd"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldengate" translatesAutoresizingMaskIntoConstraints="NO" id="DxQ-3h-prK">
-                                <rect key="frame" x="10" y="10" width="224" height="120"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DxQ-3h-prK">
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="224" id="gfY-Tj-oO2"/>
-                                    <constraint firstAttribute="height" constant="120" id="oYi-Ja-FSR"/>
+                                    <constraint firstAttribute="width" constant="238" id="gfY-Tj-oO2"/>
+                                    <constraint firstAttribute="height" constant="140" id="oYi-Ja-FSR"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssm-nb-gvH" customClass="JSQMessagesCellTextView">
+                                <rect key="frame" x="0.0" y="140" width="238" height="94"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="DxQ-3h-prK" secondAttribute="trailing" constant="10" id="21N-q8-UIT"/>
-                            <constraint firstItem="DxQ-3h-prK" firstAttribute="top" secondItem="eGV-TC-upA" secondAttribute="top" constant="10" id="33M-nF-qe0"/>
+                            <constraint firstAttribute="trailing" secondItem="DxQ-3h-prK" secondAttribute="trailing" constant="6" id="21N-q8-UIT"/>
+                            <constraint firstItem="DxQ-3h-prK" firstAttribute="top" secondItem="eGV-TC-upA" secondAttribute="top" id="33M-nF-qe0"/>
                             <constraint firstAttribute="trailing" secondItem="1i2-e7-zRj" secondAttribute="trailing" id="6a4-3N-k4v"/>
-                            <constraint firstItem="DxQ-3h-prK" firstAttribute="leading" secondItem="eGV-TC-upA" secondAttribute="leading" constant="10" id="9WK-5u-1yh"/>
+                            <constraint firstItem="DxQ-3h-prK" firstAttribute="leading" secondItem="eGV-TC-upA" secondAttribute="leading" id="9WK-5u-1yh"/>
                             <constraint firstAttribute="width" constant="244" id="FFq-3D-Ci7"/>
                             <constraint firstAttribute="trailing" secondItem="ssm-nb-gvH" secondAttribute="trailing" constant="6" id="HFM-hl-tBU"/>
                             <constraint firstItem="ssm-nb-gvH" firstAttribute="leading" secondItem="eGV-TC-upA" secondAttribute="leading" id="Nvo-TX-WiA"/>
@@ -84,8 +84,8 @@
                             <constraint firstItem="1i2-e7-zRj" firstAttribute="leading" secondItem="eGV-TC-upA" secondAttribute="leading" id="ZCf-9k-NhK"/>
                             <constraint firstAttribute="bottom" secondItem="ssm-nb-gvH" secondAttribute="bottom" id="arv-Ro-dZe"/>
                             <constraint firstAttribute="trailing" secondItem="00a-wI-KdH" secondAttribute="trailing" constant="6" id="e7O-GD-K0o"/>
-                            <constraint firstItem="DxQ-3h-prK" firstAttribute="top" secondItem="eGV-TC-upA" secondAttribute="top" constant="10" id="frg-NO-bAC"/>
-                            <constraint firstItem="ssm-nb-gvH" firstAttribute="top" secondItem="DxQ-3h-prK" secondAttribute="bottom" constant="10" id="lSy-W5-GDZ"/>
+                            <constraint firstItem="DxQ-3h-prK" firstAttribute="top" secondItem="eGV-TC-upA" secondAttribute="top" id="frg-NO-bAC"/>
+                            <constraint firstItem="ssm-nb-gvH" firstAttribute="top" secondItem="DxQ-3h-prK" secondAttribute="bottom" id="lSy-W5-GDZ"/>
                             <constraint firstItem="00a-wI-KdH" firstAttribute="leading" secondItem="eGV-TC-upA" secondAttribute="leading" id="uRl-mj-QIu"/>
                             <constraint firstItem="1i2-e7-zRj" firstAttribute="top" secondItem="eGV-TC-upA" secondAttribute="top" id="w6N-gq-Trr"/>
                             <constraint firstAttribute="bottom" secondItem="00a-wI-KdH" secondAttribute="bottom" id="zfo-5o-RIA"/>
@@ -163,7 +163,4 @@
             <point key="canvasLocation" x="371" y="75"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="goldengate" width="500" height="281"/>
-    </resources>
 </document>

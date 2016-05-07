@@ -139,6 +139,5 @@
 
 //@vvm
 @property (assign, nonatomic) MYQMessageType messageType;
-@property (strong, nonatomic, readonly) NSString* imageName;
-+ (instancetype)messageWithSenderId:(NSString *)senderId displayName:(NSString *)displayName mediaItem:(id<JSQMessageMediaData>)mediaItem captionText:(NSString *)captionText;
++ (instancetype)messageWithSenderId:(NSString *)senderId displayName:(NSString *)displayName mediaItem:(id<JSQMessageMediaData>)mediaItem;
 @end

@@ -189,18 +189,17 @@
 }
 
 //@vvm start
-+ (instancetype)messageWithSenderId:(NSString *)senderId displayName:(NSString *)displayName mediaItem:(id<JSQMessageMediaData>)mediaItem captionText:(NSString *)captionText
++ (instancetype)messageWithSenderId:(NSString *)senderId displayName:(NSString *)displayName mediaItem:(id<JSQMessageMediaData>)mediaItem
 {
-    return [[self alloc] initWithSenderId:senderId senderDisplayName:displayName date:[NSDate date] mediaItem:mediaItem captionText:captionText];
+    return [[self alloc] initWithSenderId:senderId senderDisplayName:displayName date:[NSDate date] mediaItem:mediaItem];
 }
 
-- (instancetype)initWithSenderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date mediaItem:(id<JSQMessageMediaData>)mediaItem captionText:(NSString *)captionText
+- (instancetype)initWithSenderId:(NSString *)senderId senderDisplayName:(NSString *)senderDisplayName date:(NSDate *)date mediaItem:(id<JSQMessageMediaData>)mediaItem
 {
     NSParameterAssert(mediaItem != nil);
     
     self = [self initWithSenderId:senderId senderDisplayName:senderDisplayName date:date isMedia:NO];
     if (self) {
-        _text = [captionText copy];
         _media = mediaItem;
         if ([mediaItem isKindOfClass:[MYQPhotoMediaItem class]]) {
             _messageType = MYQMessageTypePhoto;

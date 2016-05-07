@@ -174,8 +174,8 @@
 {
     //JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:[UIImage imageNamed:@"goldengate"]];
     //JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires displayName:kJSQDemoAvatarDisplayNameSquires media:photoItem];
-    MYQPhotoMediaItem *photoItem = [[MYQPhotoMediaItem alloc]initWithImageName:@"goldengate"];
-    JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires displayName:kJSQDemoAvatarDisplayNameSquires mediaItem:photoItem captionText:@"Ennada idhu"];
+    MYQPhotoMediaItem *photoItem = [[MYQPhotoMediaItem alloc]initWithImageName:@"goldengate" withCaption:@"Ennada idhu"];
+    JSQMessage *photoMessage = [JSQMessage messageWithSenderId:kJSQDemoAvatarIdSquires displayName:kJSQDemoAvatarDisplayNameSquires mediaItem:photoItem];
     [self.messages addObject:photoMessage];
 }
 

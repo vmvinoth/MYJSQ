@@ -58,6 +58,7 @@
     
     self.collectionView.collectionViewLayout.messageBubbleFont = [UIFont fontWithName:@"Helvetica" size:20];
     self.collectionView.collectionViewLayout.dateTimeBubbleFont = [UIFont fontWithName:@"Helvetica" size:12];
+    self.collectionView.collectionViewLayout.photoCaptionBubbleFont = [UIFont fontWithName:@"Helvetica" size:12];
     
     
     //Gap in the left or right
@@ -547,16 +548,18 @@
 
 - (void)handlePhotoMessageUIforCell:(JSQMessagesCollectionViewCell *)cell withMessage:(JSQMessage*)msg
 {
+    MYQPhotoMediaItem *msgMedia = (MYQPhotoMediaItem*)msg.media;
     if ([msg.senderId isEqualToString:self.senderId]){
         MYQMessagesCollectionViewCellOutgoingImage *outgoingCell = (MYQMessagesCollectionViewCellOutgoingImage*)cell;
         outgoingCell.timeInfoLabel.attributedText = [[NSAttributedString alloc] initWithString:[[JSQMessagesTimestampFormatter sharedFormatter] relativeMYQFormatterForDate:msg.date]attributes:@{ NSFontAttributeName : self.collectionView.collectionViewLayout.dateTimeBubbleFont }];
-        outgoingCell.msgImgView.image = [UIImage imageNamed:[(MYQPhotoMediaItem*)msg.media imageName]];
-        cell.textView.textColor = [UIColor blackColor];
+        outgoingCell.msgImgView.image = [UIImage imageNamed:msgMedia.imageName];
+        outgoingCell.textView.text = msgMedia.photoCaptionText;
+        outgoingCell.textView.textColor = [UIColor blackColor];
     }
     else {
         MYQMessagesCollectionViewCellIncomingImage *inComingCell = (MYQMessagesCollectionViewCellIncomingImage*)cell;
         inComingCell.timeInfoLabel.attributedText = [[NSAttributedString alloc] initWithString:[[JSQMessagesTimestampFormatter sharedFormatter] relativeMYQFormatterForDate:msg.date]attributes:@{ NSFontAttributeName : self.collectionView.collectionViewLayout.dateTimeBubbleFont }];
-        inComingCell.msgImgView.image = [UIImage imageNamed:msg.imageName];
+        inComingCell.msgImgView.image = [UIImage imageNamed:msgMedia.imageName];
         cell.textView.textColor = [UIColor whiteColor];
     }
     

@@ -442,9 +442,11 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     
     layoutAttributes.messageBubbleFont = self.messageBubbleFont;
 
-    //@vvm
+    //@vvm start
     layoutAttributes.dateTimeBubbleFont = self.dateTimeBubbleFont;
-
+    layoutAttributes.photoCaptionBubbleFont = self.photoCaptionBubbleFont;
+    //@vvm end
+    
     layoutAttributes.incomingAvatarViewSize = self.incomingAvatarViewSize;
     
     layoutAttributes.outgoingAvatarViewSize = self.outgoingAvatarViewSize;
@@ -544,6 +546,17 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     
     NSParameterAssert(dateTimeBubbleFont != nil);
     _dateTimeBubbleFont = dateTimeBubbleFont;
+    [self invalidateLayoutWithContext:[JSQMessagesCollectionViewFlowLayoutInvalidationContext context]];
+}
+
+- (void)setPhotoCaptionBubbleFont:(UIFont *)photoCaptionBubbleFont
+{
+    if ([_photoCaptionBubbleFont isEqual:photoCaptionBubbleFont]) {
+        return;
+    }
+    
+    NSParameterAssert(photoCaptionBubbleFont != nil);
+    _photoCaptionBubbleFont = photoCaptionBubbleFont;
     [self invalidateLayoutWithContext:[JSQMessagesCollectionViewFlowLayoutInvalidationContext context]];
 }
 @end

@@ -10,5 +10,6 @@
 
 @interface MYQPhotoMediaItem : JSQMediaItem<JSQMessageMediaData, NSCoding, NSCopying>
 @property (copy, nonatomic) NSString *imageName;
-- (instancetype)initWithImageName:(NSString *)imageName;
+@property (copy, nonatomic) NSString *photoCaptionText;
+- (instancetype)initWithImageName:(NSString *)imageName withCaption:(NSString*)imageCaptionText;
 @end

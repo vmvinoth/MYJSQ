@@ -17,13 +17,16 @@
     
     return CGSizeMake(210.0f, 150.0f);
 }
-- (instancetype)initWithImageName:(NSString *)imageName
+- (instancetype)initWithImageName:(NSString *)imageName withCaption:(NSString *)imageCaptionText
 {
     self = [super init];
     if (self) {
         _imageName = [imageName copy];
+        if (!imageCaptionText) {
+            imageCaptionText = @"";
+        }
+        _photoCaptionText = [imageCaptionText copy];
     }
     return self;
 }
-
 @end

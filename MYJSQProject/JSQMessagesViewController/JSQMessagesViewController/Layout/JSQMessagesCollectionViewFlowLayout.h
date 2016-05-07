@@ -212,4 +212,5 @@ FOUNDATION_EXPORT const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault;
 
 //@vvm
 @property (strong, nonatomic) UIFont *dateTimeBubbleFont;
+@property (strong, nonatomic) UIFont *photoCaptionBubbleFont;
 @end

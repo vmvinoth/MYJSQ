@@ -131,9 +131,10 @@
     copy.cellTopLabelHeight = self.cellTopLabelHeight;
     copy.messageBubbleTopLabelHeight = self.messageBubbleTopLabelHeight;
     copy.cellBottomLabelHeight = self.cellBottomLabelHeight;
-    //@vvm
+    //@vvm start
     copy.dateTimeBubbleFont = self.dateTimeBubbleFont;
-
+    copy.photoCaptionBubbleFont = self.photoCaptionBubbleFont;
+    //@vvm end
     return copy;
 }
 
@@ -142,5 +143,11 @@
 {
     NSParameterAssert(dateTimeBubbleFont != nil);
     _dateTimeBubbleFont = dateTimeBubbleFont;
+}
+
+- (void)setPhotoCaptionBubbleFont:(UIFont *)photoCaptionBubbleFont
+{
+    NSParameterAssert(photoCaptionBubbleFont != nil);
+    _photoCaptionBubbleFont = photoCaptionBubbleFont;
 }
 @end
